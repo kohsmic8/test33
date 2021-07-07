@@ -1,0 +1,19 @@
+.koko_header_logo{
+margin-top: 2rem; font-family: 'Bebas Neue', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.koko_header_botton{
+    margin-bottom: 1.5rem;
+}
+
+.koko_footer_botton{
+    margin-top: 1.5rem;
+}
+
+.koko_footer_logo{
+    margin-top: 1rem; font-family: 'Bebas Neue', cursive;
+        font-family: 'Playfair Display', serif;
+        font-family: 'PT Sans Narrow', sans-serif;
+}
