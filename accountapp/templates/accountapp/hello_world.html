@@ -1,26 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <style>
-        .testing {
-            background-color: antiquewhite;
-            margin: 1rem;
-            width: 48px;
-            height: 48px;
-            border-radius: .5rem;
-        }
 
-    </style>
+    <div style="margin: 2rem; text-align: center">
+        <h1>HTTP METHOD</h1>
 
-    <div style="height: 20rem; background-color: cornflowerblue; margin: 2rem; border-radius: 1rem">
-        <h1>TEST</h1>
+        <form action="/accounts/hello_world/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="input_text">
+            <input type="submit" class="btn btn-outline-primary px-5" value="SEND">
 
-        <h3>{{ TEXT }}</h3>
+        </form>
 
-    <div class="testing" style="display: block">block</div>
-    <div class="testing" style="display: inline">inline</div>
-    <div class="testing" style="display: none">none</div>
-    <div class="testing" style="display: inline-block">inline-block</div>
-    <div class="testing"></div>
+        <h3>{{ new_model.text }}</h3>
+
 </div>
 {% endblock %}
