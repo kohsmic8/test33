@@ -17,3 +17,8 @@ font-family: 'PT Sans Narrow', sans-serif;
         font-family: 'Playfair Display', serif;
         font-family: 'PT Sans Narrow', sans-serif;
 }
+
+.mw-500{
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+}
