@@ -13,20 +13,22 @@ from accountapp.models import NewModel
 
 
 def hello_world(request):
-    if request.method == "POST":
+    if request.user.is_authenticated:
+        if request.method == "POST":
 
-        temp = request.POST.get('input_text')
+            temp = request.POST.get('input_text')
 
-        new_model = NewModel()
-        new_model.text = temp
-        new_model.save()
+            new_model = NewModel()
+            new_model.text = temp
+            new_model.save()
 
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
+            return HttpResponseRedirect(reverse('accountapp:hello_world'))
 
+        else:
+            data_list = NewModel.objects.all()
+            return render(request,'accountapp/hello_world.html',context={'data_list': data_list})
     else:
-        data_list = NewModel.objects.all()
-        return render(request,'accountapp/hello_world.html',context={'data_list': data_list})
-
+        return HttpResponseRedirect(reverse('accountapp:login'))
 
 
 class AccountCreateView(CreateView):
@@ -47,9 +49,32 @@ class AccountUpdateView(UpdateView):
     form_class = AccountCreationForm
     success_url = reverse_lazy('accountapp:hello_world')
 
+    def get(self, request, *args, **kwargs):
+        if request.User.is_authenticated:
+            return super().get(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect(reverse('accountapp:login'))
+    def post(self, request, *args, **kwargs):
+        if request.User.is_authenticated:
+            return super().post(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect(reverse('accountapp:login'))
+
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/delete.html'
     success_url = reverse_lazy('accountapp:hello_world')
+
+
+    def get(self, request, *args, **kwargs):
+        if request.User.is_authenticated:
+            return super().get(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect(reverse('accountapp:login'))
+    def post(self, request, *args, **kwargs):
+        if request.User.is_authenticated:
+            return super().post(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect(reverse('accountapp:login'))
 
