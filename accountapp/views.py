@@ -46,8 +46,8 @@ class AccountDetailView(DetailView):
 
 hass_ownership = [login_required, account_ownership_required]
 
-@method_decorator(hass_ownership('get'))
-@method_decorator(hass_ownership('post'))
+@method_decorator(hass_ownership, 'get')
+@method_decorator(hass_ownership, 'post')
 class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
@@ -56,8 +56,8 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world')
 
 
-@method_decorator(hass_ownership('get'))
-@method_decorator(hass_ownership('post'))
+@method_decorator(hass_ownership, 'get')
+@method_decorator(hass_ownership, 'post')
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
