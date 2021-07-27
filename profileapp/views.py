@@ -17,3 +17,4 @@ class ProfileCreateView(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    # forms와 models의 필드값중 user이 매칭이 안되어 오류가 발생하므로 처리하는 작업
