@@ -29,3 +29,7 @@ font-family: 'PT Sans Narrow', sans-serif;
     border-radius: 20rem;
     object-fit: cover;
 }
+
+.NNB_S {
+    font-family: NanumSquareB, cursive;
+}

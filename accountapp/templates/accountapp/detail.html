@@ -8,14 +8,14 @@
             <img src="{{ target_user.profile.image.url }}"
                  class="profile_image m-4"  {# 클래스를 만들어줌 #}
                  alt="profile image">  {# 대체 이미지 #}
-            <h4>{{ target_user.profile.nickname }}</h4>
+            <h2 class="NNB_S">{{ target_user.profile.nickname }}</h2>
             <H5>{{ target_user.profile.message }}</H5>
         {% else %}
-            <h4>
+            <h2>
                 <a href="{% url 'profileapp:create' %}">
                     Create Profile
                 </a>
-            </h4>
+            </h2>
             {% endif %}
         </div>
         <div>
