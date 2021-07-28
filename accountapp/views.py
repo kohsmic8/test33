@@ -53,8 +53,9 @@ class AccountUpdateView(UpdateView):
     context_object_name = 'target_user'
     template_name = 'accountapp/update.html'
     form_class = AccountCreationForm
-    success_url = reverse_lazy('accountapp:hello_world')
 
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
 @method_decorator(hass_ownership, 'get')
 @method_decorator(hass_ownership, 'post')
