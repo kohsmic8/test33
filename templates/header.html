@@ -4,7 +4,11 @@
         <h1>ko-ko</h1>
     </div>
     <div class="koko_header_botton">
-        <span>nav1</span>
+        <span>
+            <a href="{% url 'articleapp:list' %}">
+                Articles
+            </a>
+        </span>
         <span>nav2</span>
         {% if not user.is_authenticated %}
         <span>
