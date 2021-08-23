@@ -10,7 +10,6 @@
                      alt="profile image">
                 <h2 class="NNS_B">
                     {{ target_project.name }}
-
                 </h2>
                 <h5>{{ target_project.description }}</h5>
 
@@ -18,16 +17,23 @@
 
     </div>
 
-    <div class="text-center">
-        <a href="{% url 'subscribeapp:subscribe' project_pk=target_project.pk %}"
-            class="btn btn-outline-success rounded-pill px-5">
-            Subscribe
-        </a>
-    </div>
-
+    {% if user.is_authenticated %}
+        <div class="text-center">
+        {% if not subscription %}
+            <a href="{% url 'subscribeapp:subscribe' project_pk=target_project.pk %}"
+            class="btn btn-primary rounded-pill px-5">
+                Subscribe
+            </a>
+        {% else %}
+            <a href="{% url 'subscribeapp:subscribe' project_pk=target_project.pk %}"
+            class="btn btn-secondary rounded-pill px-5">
+                Unsubscribe
+            </a>
+        {% endif %}
+        </div>
+    {% endif %}
     <div>
         {% include 'snippets/list_koko.html' with article_list=object_list %}
     </div>
-
 
 {% endblock %}
