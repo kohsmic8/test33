@@ -71,3 +71,12 @@ font-family: 'PT Sans Narrow', sans-serif;
         font-size: 13px;
     }
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
