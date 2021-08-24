@@ -21,7 +21,7 @@
         <div class="text-center">
         {% if not subscription %}
             <a href="{% url 'subscribeapp:subscribe' project_pk=target_project.pk %}"
-            class="btn btn-primary rounded-pill px-5">
+            class="btn btn-outline-success rounded-pill px-5">
                 Subscribe
             </a>
         {% else %}
