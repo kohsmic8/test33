@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 {% include 'head.html' %}
 
-<body style="font-family: NanumSquareR">
+<body style="font-family: 'NanumSquareR'">
 
 {% include 'header.html' %}
 
@@ -13,8 +14,8 @@
         <div class="btn btn-{{ message.tags }} rounded-pill px-5">
             {{ message }}
         </div>
-    </div>
 
+    </div>
 {% endfor %}
 
 {% block content %}
@@ -23,6 +24,7 @@
 <hr>
 
 {% include 'footer.html' %}
+
 
 </body>
 </html>
