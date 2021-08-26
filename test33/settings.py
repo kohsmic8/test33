@@ -63,8 +63,7 @@ INSTALLED_APPS = [
 ]
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
-    messages.INFO: '',
-    50: 'critical',
+    messages.ERROR: 'danger'
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
