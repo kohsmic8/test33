@@ -86,3 +86,6 @@ media/
 staticfiles/
 
 test/
+
+koko
+koko.pub
