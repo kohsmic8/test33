@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo 'adddrr'
+RUN echo 'ad2ddrr'
 
 RUN git clone https://github.com/kohsmic8/test33.git
 
@@ -18,4 +18,4 @@ RUN pip install mysqlclient
 
 EXPOSE 8000
 
-CMD ["bash", "-c", "python manage.py collectstatic --noinput --settings=test33.deploy && python manage.py migrate --settings=test33.deploy && gunicorn --env DJANGO_SETTINGS_MODULE=test33.settings.deploy test33.wsgi --bind 0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py collectstatic --noinput --settings=test33.settings.deploy && python manage.py migrate --settings=test33.settings.deploy && gunicorn --env DJANGO_SETTINGS_MODULE=test33.settings.deploy test33.wsgi --bind 0.0.0.0:8000"]
