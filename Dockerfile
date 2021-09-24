@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo '3wwdssrr'
+RUN echo '3wswdssrr'
 
 RUN git clone https://github.com/kohsmic8/test33.git
 
