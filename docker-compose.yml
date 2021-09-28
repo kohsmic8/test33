@@ -21,6 +21,8 @@ services:
     volumes:
       - koko_static:/home/test33/staticfiles/
       - koko_media:/home/test33/media/
+    secrets:
+      - DJANGO_SECRET_KEY
 
 
   mariadb:
@@ -42,3 +44,7 @@ volumes:
   koko_static:
   koko_media:
   koko_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
