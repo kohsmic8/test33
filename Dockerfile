@@ -2,13 +2,11 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo '3wswdssrr'
+RUN echo '3wswsrr'
 
 RUN git clone https://github.com/kohsmic8/test33.git
 
 WORKDIR /home/test33
-
-RUN echo "SECRET_KEY=django-insecure-!(k1r4z^g=t0n!e+v4!98ihh1$bj2t+(u$mrie37!3w(1sulcp" > .env
 
 RUN pip install -r requirements.txt
 

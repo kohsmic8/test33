@@ -15,7 +15,7 @@ services:
 
 
   django:
-    image: koko_django:4
+    image: koko_django:5
     networks:
       - koko_network
     volumes:
