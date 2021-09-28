@@ -23,7 +23,8 @@ services:
       - koko_media:/home/test33/media/
     secrets:
       - DJANGO_SECRET_KEY
-
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
@@ -36,6 +37,10 @@ services:
       MARIADB_DATABASE: django
       MARIADB_USER: django
       MARIADB_PASSWORD: 1234
+    secrets:
+      - MARIADB_ROOT_PASSWORD
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
 networks:
   koko_network:
