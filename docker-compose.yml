@@ -33,10 +33,10 @@ services:
     volumes:
       - koko_mariadb:/var/lib/mysql
     environment:
-      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
       MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: 1234
+      MARIADB_USER_FILE: /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE: /run/secrets/MARIADB_PASSWORD
     secrets:
       - MARIADB_ROOT_PASSWORD
       - MARIADB_USER
