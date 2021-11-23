@@ -13,11 +13,13 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
 from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-
+# 추가
+DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  #추가
 ]
 
 ROOT_URLCONF = 'test33.urls'
@@ -71,6 +74,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'test33.wsgi.application'
 
+# DATABASES 추가구문
+DATABASES = {
+    'default' : {
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':os.path.join(BASE_DIR, 'db.sqlite3')
+    }
+}
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation

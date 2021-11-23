@@ -75,11 +75,17 @@ venv/
 .env
 
 db.sqlite3
+.DS_Store
+
+.vscode/
 
 .idea/
 
 __pycache__/
+*.py[cod]
 /db_backup.sqlite3
+
+.Python
 
 media/
 
